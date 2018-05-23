@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id "org.springframework.boot" version "1.5.9.RELEASE"
+    id 'idea'
 }
 
 group 'com.mooracle'
@@ -11,6 +13,68 @@ repositories {
     mavenCentral()
 }
 
+/** ENTRY 1:
+ *  1.  in the dependency we will group the dependencies into:
+ *      a.  compile: which loaded in each compiling time
+ *      b.  runtime: only called when needed in the runtime (usually because it already has extension classes)
+ *      c.  testCompile: only called in the test source code
+ *
+ * */
 dependencies {
+    //COMPILED GROUP:
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.5.9.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.9.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-orm
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.13.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.8.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.12.Final'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.12.Final'
+
+    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp
+    compile group: 'org.apache.tomcat', name: 'tomcat-dbcp', version: '8.0.47'
+
+    // https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.3.RELEASE'
+
+    //RUNTIME GROUP
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    runtime group: 'com.h2database', name: 'h2', version: '1.4.196'
+
+    // https://mvnrepository.com/artifact/javax.transaction/jta
+    runtime group: 'javax.transaction', name: 'jta', version: '1.1'
+
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    runtime group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.13'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    runtime group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+
+    //TESTCOMPILE GROUP:
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.9.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-test
+    testCompile group: 'org.springframework.security', name: 'spring-security-test', version: '4.2.3.RELEASE'
+
+    // https://mvnrepository.com/artifact/com.github.springtestdbunit/spring-test-dbunit
+    testCompile group: 'com.github.springtestdbunit', name: 'spring-test-dbunit', version: '1.3.0'
+
+    // https://mvnrepository.com/artifact/org.dbunit/dbunit
+    testCompile group: 'org.dbunit', name: 'dbunit', version: '2.5.3'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+
 }
