@@ -86,3 +86,6 @@ Go to **com.mooracle.dao.UserDao** to build UserDao interface
 
 ## Entry 9: Creating RoleDao interface
 Go to **com.mooracle.dao.RoleDao** to create Role DAO interface
+
+## Entry 10: Creating FavoriteDao interface
+Go to **com.mooracle.dao.FavoriteDao** to build the FavoriteDao and add @Query to it
