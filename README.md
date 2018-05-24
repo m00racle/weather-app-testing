@@ -65,3 +65,6 @@ this is standard Spring Application Boot Run to initialize other Components.
 
 ##Entry 5: Creating Role @Entity
 go to **com.mooracle.domain.Role** to make Role entity
+
+##Entry 6: Creating User @Entity
+go to **com.mooracle.domain.User** to make User entity class
