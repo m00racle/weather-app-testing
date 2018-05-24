@@ -31,6 +31,8 @@ enable the following APIs:
 # Weather App Project
 Use this [Guthub Repo](https://github.com/treehouse-projects/spring-unit-test-weather) as reference
 
+Also read this for the [REST API for Spring](https://spring.io/guides/gs/consuming-rest)
+
 ##Entry 1: Dependencies and Plugins settings
 To do this we need to go to **build.gradle** to add dependencies and plugins. Please note that plugins will use the most
 recent method of creating it. 
@@ -58,5 +60,6 @@ API key for Google Geocoding : AIzaSyDjDl4nhne6nmlpT0EivknNy4gjIj9fSgA
 API key for Google Places web : AIzaSyDjDl4nhne6nmlpT0EivknNy4gjIj9fSgA
 
 
-
+##Entry 4: Creating the Application.java class
+this is standard Spring Application Boot Run to initialize other Components.  
 
