@@ -68,3 +68,7 @@ go to **com.mooracle.domain.Role** to make Role entity
 
 ##Entry 6: Creating User @Entity
 go to **com.mooracle.domain.User** to make User entity class
+
+##Entry 7: Creating Favorite @Entity
+go to **com.mooracle.domain.Favorite** to make Favorite entity class
+
