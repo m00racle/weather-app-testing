@@ -63,3 +63,12 @@ API key for Google Places web : AIzaSyDjDl4nhne6nmlpT0EivknNy4gjIj9fSgA
 ##Entry 4: Creating the Application.java class
 this is standard Spring Application Boot Run to initialize other Components.  
 
+##Entry 5: Creating Role @Entity
+go to **com.mooracle.domain.Role** to make Role entity
+
+##Entry 6: Creating User @Entity
+go to **com.mooracle.domain.User** to make User entity class
+
+##Entry 7: Creating Favorite @Entity
+go to **com.mooracle.domain.Favorite** to make Favorite entity class
+
