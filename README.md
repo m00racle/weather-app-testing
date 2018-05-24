@@ -89,3 +89,9 @@ Go to **com.mooracle.dao.RoleDao** to create Role DAO interface
 
 ## Entry 10: Creating FavoriteDao interface
 Go to **com.mooracle.dao.FavoriteDao** to build the FavoriteDao and add @Query to it
+
+## Notes: After Creating DAO layer
+After this we need to build the Service Layer since it will be required by Controllers and also Util package. The
+service layer is more complex here since many business logic need to be implemented here. Moreover, in this layer we
+also need to prepare Exception handlers for many scenarios. Then we also need to prepare the REST template to handle
+the external API communication. 
