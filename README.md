@@ -99,4 +99,10 @@ the external API communication.
 ## Entry 11: Preparing Dto Package and Creating Dto.java
 This part of the Service layer is the most widely needed by other services, thus we must prepare it first. Meanwhile to
 make it easier for package tree management it will be better to set the package for resttemplate also. Both resttemplate
-and dto package has similar sub packages fo geocoding and weather. After all set go to **
+and dto package has similar sub packages fo geocoding and weather. After all set go to **com.mooracle.service.dto.Dto**
+
+## Entry 12: Creating Condition.java service
+Go to **com.mooracle.service.dto.weather.Condition** to fecth all JSON data from Dark Sky API
+
+
+
