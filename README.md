@@ -104,5 +104,6 @@ and dto package has similar sub packages fo geocoding and weather. After all set
 ## Entry 12: Creating Condition.java service
 Go to **com.mooracle.service.dto.weather.Condition** to fecth all JSON data from Dark Sky API
 
-
+## Entry 13: Creating ForecastData.java service 
+Go to **com.mooracle.service.dto.weather.ForecastData**
 
