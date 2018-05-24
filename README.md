@@ -83,3 +83,6 @@ this case it uses external classes that already internal implementations.
 
 ## Entry 8: Creating UserDao Interface
 Go to **com.mooracle.dao.UserDao** to build UserDao interface 
+
+## Entry 9: Creating RoleDao interface
+Go to **com.mooracle.dao.RoleDao** to create Role DAO interface
