@@ -80,3 +80,6 @@ back end of the app is practical since DAO component will also be used extensive
 
 Moreover, in this app development DAO mostly consist of interfaces. Ideally it will have its own implementations but in
 this case it uses external classes that already internal implementations. 
+
+## Entry 8: Creating UserDao Interface
+Go to **com.mooracle.dao.UserDao** to build UserDao interface 
