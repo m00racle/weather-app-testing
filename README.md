@@ -72,3 +72,11 @@ go to **com.mooracle.domain.User** to make User entity class
 ##Entry 7: Creating Favorite @Entity
 go to **com.mooracle.domain.Favorite** to make Favorite entity class
 
+##Notes : After creating Entity models
+By looking at the development process so far it is clear that the right path is by creating the model first.
+This approach is used since model will be used through all the development phase especially in the controller and service
+layer. The next component or better we called it as layer need to be build is the DAO layer. This approach from front and
+back end of the app is practical since DAO component will also be used extensivelly in other components and layers.
+
+Moreover, in this app development DAO mostly consist of interfaces. Ideally it will have its own implementations but in
+this case it uses external classes that already internal implementations. 
