@@ -95,3 +95,8 @@ After this we need to build the Service Layer since it will be required by Contr
 service layer is more complex here since many business logic need to be implemented here. Moreover, in this layer we
 also need to prepare Exception handlers for many scenarios. Then we also need to prepare the REST template to handle
 the external API communication. 
+
+## Entry 11: Preparing Dto Package and Creating Dto.java
+This part of the Service layer is the most widely needed by other services, thus we must prepare it first. Meanwhile to
+make it easier for package tree management it will be better to set the package for resttemplate also. Both resttemplate
+and dto package has similar sub packages fo geocoding and weather. After all set go to **
