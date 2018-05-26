@@ -95,3 +95,49 @@ After this we need to build the Service Layer since it will be required by Contr
 service layer is more complex here since many business logic need to be implemented here. Moreover, in this layer we
 also need to prepare Exception handlers for many scenarios. Then we also need to prepare the REST template to handle
 the external API communication. 
+
+## Entry 11: Preparing Dto Package and Creating Dto.java
+This part of the Service layer is the most widely needed by other services, thus we must prepare it first. Meanwhile to
+make it easier for package tree management it will be better to set the package for resttemplate also. Both resttemplate
+and dto package has similar sub packages fo geocoding and weather. After all set go to **com.mooracle.service.dto.Dto**
+
+## Entry 12: Creating Condition.java service
+Go to **com.mooracle.service.dto.weather.Condition** to fecth all JSON data from Dark Sky API
+
+## Entry 13: Creating ForecastData.java service 
+Go to **com.mooracle.service.dto.weather.ForecastData**
+
+## Entry 14: Creating Weather.java service
+Go to **com.mooracle.service.dto.weather.Weather** to create current weather service
+
+## Entry 15: Creating Geocoding AddressComponent.java class
+Go to **com.mooracle.service.dto.geocoding.AddressComponent** to make design view on how an address should be written
+[more on @JsonProperty annotation](https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations)
+
+## Entry 16: Creating Geocoding Location.java class
+Go to **com.mooracle.service.dto.geocoding.Location** the link to @JsonProperty is the same as Entry 15
+
+## Entry 17: Creating Geocoding Geometry.java class
+Go to **com.mooracle.service.dto.geocoding.Geometry** 
+
+## Entry 18: Creating Geocoding PlacesResult.java class (patched)
+Go to **com.mooracle.service.dto.geocoding.PlacesResult**
+
+## Entry 19: Creating Geocoding PlacesResponse.java class
+Go to **com.mooracle.service.dto.geocoding.PlacesResponse**
+
+## Entry 20: Creating Geocoding service of GeocodingResult.java
+Go to **com.mooracle.service.dto.geocoding.GeocodingResult**
+
+## Entry 21: Creating Geocoding service GeocodingResponse.java
+Go to **com.mooracle.service.dto.geocoding.GeocodingResponse**
+
+## After finishing the Data Transfer Object (DTO) - prepare to merge branches
+[More about DTO](https://en.wikipedia.org/wiki/Data_transfer_object). There also a debate on whether using DTO is good
+or bad practice in [this forum](https://stackoverflow.com/questions/36174516/rest-api-dtos-or-not). This debate from my
+point of view is also required on understanding what does DTO function is. However, for now the main question is whether
+we merge the branch now and focus only on DTO or we wait until the REST template service is developed. In the name of 
+practicality I think the development of DTO service layer is also a development itself and indeed if the fucntion is
+tested to deem functioning it should be integrated in the properties-settings branch. This will also denotes the
+importance of understanding what DTO really stands for. DTOs are simple objects that should not contain any business 
+logic but may contain serialization and deserialization mechanisms for transferring data over the wire.
