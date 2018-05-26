@@ -125,3 +125,6 @@ Go to **com.mooracle.service.dto.geocoding.PlacesResult**
 
 ## Entry 19: Creating Geocoding PlacesResponse.java class
 Go to **com.mooracle.service.dto.geocoding.PlacesResponse**
+
+## Entry 20: Creating Geocoding service of GeocodingResult.java
+Go to **com.mooracle.service.dto.geocoding.GeocodingResult**
