@@ -147,3 +147,13 @@ rest-template-service. Here we will develop all necessary classes and interfaces
 
 ## Entry 22: Creating REST PlacesService.java interface
 Go to **com.mooracle.service.resttemplate.PlacesService**
+
+## Entry 23: Creating REST RestApiService.java abstract class
+Go to **com.mooracle.service.resttemplate.RestApiService** which will introduce RestTemplate which is part of Spring
+framework web client package [here is the docs](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)
+This class simplifies communication with HTTP servers, and enforces RESTful principles.
+### Note:
+In this entry we found out that this abstract class required to have call a class from **com.mooracle.util** package
+thus we must take a detour by making a new branch to provide the necessary class for the abstract class to perform.
+## Entry 23a: Creating WebUtils.java class to support RestApiService.java 
+Go to **com.mooracle.util.WebUtils**
