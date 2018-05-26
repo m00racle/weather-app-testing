@@ -3,7 +3,7 @@ package com.mooracle.service.dto.geocoding;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mooracle.service.dto.Dto;
 
-/** Entry 18: Creating Geocoding PlaceResult.java class
+/** Entry 18: Creating Geocoding PlacesResult.java class
  *  1.  This class extending the Dto class
  *  2.  This class is intended to fetch the place id data from external Google place API using JSON data type
  *  3.  To find out more about @JsonProperty refer to Entry 15 ind the README
@@ -11,7 +11,7 @@ import com.mooracle.service.dto.Dto;
  *  5.  This class will be the backbone of the PlaceResponse class which looks like will handle the controller requests
  *
  * */
-public class PlaceResult extends Dto {
+public class PlacesResult extends Dto {
     // field declarations:
 
     @JsonProperty("place_id")
