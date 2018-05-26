@@ -141,3 +141,6 @@ practicality I think the development of DTO service layer is also a development 
 tested to deem functioning it should be integrated in the properties-settings branch. This will also denotes the
 importance of understanding what DTO really stands for. DTOs are simple objects that should not contain any business 
 logic but may contain serialization and deserialization mechanisms for transferring data over the wire.
+
+After this we will focus on the REST template functioning class thus we will create new GitHUb branch called 
+rest-template-service. Here we will develop all necessary classes and interfaces to build full functioning REST API
