@@ -107,3 +107,5 @@ Go to **com.mooracle.service.dto.weather.Condition** to fecth all JSON data from
 ## Entry 13: Creating ForecastData.java service 
 Go to **com.mooracle.service.dto.weather.ForecastData**
 
+## Entry 14: Creating Weather.java service
+Go to **com.mooracle.service.dto.weather.Weather** to create current weather service
