@@ -131,3 +131,13 @@ Go to **com.mooracle.service.dto.geocoding.GeocodingResult**
 
 ## Entry 21: Creating Geocoding service GeocodingResponse.java
 Go to **com.mooracle.service.dto.geocoding.GeocodingResponse**
+
+## After finishing the Data Transfer Object (DTO) - prepare to merge branches
+[More about DTO](https://en.wikipedia.org/wiki/Data_transfer_object). There also a debate on whether using DTO is good
+or bad practice in [this forum](https://stackoverflow.com/questions/36174516/rest-api-dtos-or-not). This debate from my
+point of view is also required on understanding what does DTO function is. However, for now the main question is whether
+we merge the branch now and focus only on DTO or we wait until the REST template service is developed. In the name of 
+practicality I think the development of DTO service layer is also a development itself and indeed if the fucntion is
+tested to deem functioning it should be integrated in the properties-settings branch. This will also denotes the
+importance of understanding what DTO really stands for. DTOs are simple objects that should not contain any business 
+logic but may contain serialization and deserialization mechanisms for transferring data over the wire.
