@@ -119,3 +119,6 @@ Go to **com.mooracle.service.dto.geocoding.Location** the link to @JsonProperty 
 
 ## Entry 17: Creating Geocoding Geometry.java class
 Go to **com.mooracle.service.dto.geocoding.Geometry** 
+
+## Entry 18: Creating Geocoding PlaceResult.java class
+Go to **com.mooracle.service.dto.geocoding.PlaceResult**
