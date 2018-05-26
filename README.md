@@ -109,3 +109,7 @@ Go to **com.mooracle.service.dto.weather.ForecastData**
 
 ## Entry 14: Creating Weather.java service
 Go to **com.mooracle.service.dto.weather.Weather** to create current weather service
+
+## Entry 15: Creating Geocoding AddressComponent.java class
+Go to **com.mooracle.service.dto.geocoding.AddressComponent** to make design view on how an address should be written
+[more on @JsonProperty annotation](https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations)
