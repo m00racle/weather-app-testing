@@ -144,3 +144,6 @@ logic but may contain serialization and deserialization mechanisms for transferr
 
 After this we will focus on the REST template functioning class thus we will create new GitHUb branch called 
 rest-template-service. Here we will develop all necessary classes and interfaces to build full functioning REST API
+
+## Entry 22: Creating REST PlacesService.java interface
+Go to **com.mooracle.service.resttemplate.PlacesService**
