@@ -175,3 +175,6 @@ Go to **com.mooracle.service.WeatherService**
 
 ## Entry 26: Creating GeocodingService.java interface
 Go to **com.mooracle.service.GeocodingService**
+
+## Entry 27: Creating UserService.java interface
+Go to **com.mooracle.service.UserService**
