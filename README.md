@@ -152,8 +152,11 @@ Go to **com.mooracle.service.resttemplate.PlacesService**
 Go to **com.mooracle.service.resttemplate.RestApiService** which will introduce RestTemplate which is part of Spring
 framework web client package [here is the docs](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)
 This class simplifies communication with HTTP servers, and enforces RESTful principles.
+[Find out more on Builder Design Pattern](https://www.google.co.id/search?q=java+builder+design+pattern&oq=java+builde&aqs=chrome.2.69i57j0l5.5224j1j7&sourceid=chrome&ie=UTF-8)
+also it is best to [look back at abstract class](http://www.javacoffeebreak.com/faq/faq0084.html).
 ### Note:
 In this entry we found out that this abstract class required to have call a class from **com.mooracle.util** package
 thus we must take a detour by making a new branch to provide the necessary class for the abstract class to perform.
 ## Entry 23a: Creating WebUtils.java class to support RestApiService.java 
-Go to **com.mooracle.util.WebUtils**
+Go to **com.mooracle.util.WebUtils** after this finish we can back to Entry 23 to build RestApiService.java. 
+[more on URL Encoder](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html)
