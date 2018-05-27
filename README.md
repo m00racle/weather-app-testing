@@ -178,3 +178,6 @@ Go to **com.mooracle.service.GeocodingService**
 
 ## Entry 27: Creating UserService.java interface
 Go to **com.mooracle.service.UserService**
+
+## Entry 28: Creating UserServiceImpl.java class implements UserService.java interface
+Go to **com.mooracle.service.UserServiceImpl**
