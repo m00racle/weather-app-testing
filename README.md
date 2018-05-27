@@ -169,3 +169,6 @@ only dependent on external librarties. Therefore most likely this class will be 
 this is the main function to call for the timestamp. 
 [more on the JsonParser class](https://fasterxml.github.io/jackson-core/javadoc/2.5/com/fasterxml/jackson/core/JsonParser.html)
 this is the base class that defines public API for reading JSON content.
+
+## Entry 25: Creating WeatherService.java interface
+Go to **com.mooracle.service.WeatherService**
