@@ -182,3 +182,5 @@ Go to **com.mooracle.service.FavoriteService** to build the main interface. For 
 **com.mooracle.service.FavoriteNotFoundException**. For FavoriteSaveException go to 
 **com.mooracle.service.FavoriteSaveException** as well as **com.mooracle.service.FavoriteDeleteException** for 
 FavoriteDeleteExeption class.
+## Entry 30: Creating FavoriteServiceImpl implements FavoriteService Interface
+Go to **com.mooracle.service.FavoriteServiceImpl**
