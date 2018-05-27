@@ -172,3 +172,6 @@ this is the base class that defines public API for reading JSON content.
 
 ## Entry 25: Creating WeatherService.java interface
 Go to **com.mooracle.service.WeatherService**
+
+## Entry 26: Creating GeocodingService.java interface
+Go to **com.mooracle.service.GeocodingService**
