@@ -176,7 +176,7 @@ Go to **com.mooracle.service.GeocodingService**
 ## Entry 27: Creating UserService.java interface
 Go to **com.mooracle.service.UserService**
 ## Entry 28: Creating UserServiceImpl.java class implements UserService.java interface
-Go to **com.mooracle.service.UserServiceImpl**
+Go to **com.mooracle.service.UserServiceImpl**, Note that there's a patch since we forgot to add @Service
 ## Entry 29: Creating FavoriteService.java interface and its Exceptions
 Go to **com.mooracle.service.FavoriteService** to build the main interface. For the FavoriteNotFoundException go to
 **com.mooracle.service.FavoriteNotFoundException**. For FavoriteSaveException go to 

@@ -5,6 +5,7 @@ import com.mooracle.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /** Entry 28: Creating UserServiceImpl.java class implements UserService.java interface
  *  1.  This class implements UserService.java interface thus it must implements all of interface's methods
@@ -13,6 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  *  4.  This class basically just fetch user data from Dto package which in this case UserDao interface
  *  5.  As usual when @Autowired Spring will refer to the only one immediate implementation of the interface
  * */
+
+@Service //patched
 public class UserServiceImpl implements UserService{
     // instantiate Dto field for User data (UserDao interface)
     @Autowired
