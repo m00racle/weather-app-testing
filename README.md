@@ -169,15 +169,16 @@ only dependent on external librarties. Therefore most likely this class will be 
 this is the main function to call for the timestamp. 
 [more on the JsonParser class](https://fasterxml.github.io/jackson-core/javadoc/2.5/com/fasterxml/jackson/core/JsonParser.html)
 this is the base class that defines public API for reading JSON content.
-
 ## Entry 25: Creating WeatherService.java interface
 Go to **com.mooracle.service.WeatherService**
-
 ## Entry 26: Creating GeocodingService.java interface
 Go to **com.mooracle.service.GeocodingService**
-
 ## Entry 27: Creating UserService.java interface
 Go to **com.mooracle.service.UserService**
-
 ## Entry 28: Creating UserServiceImpl.java class implements UserService.java interface
 Go to **com.mooracle.service.UserServiceImpl**
+## Entry 29: Creating FavoriteService.java interface and its Exceptions
+Go to **com.mooracle.service.FavoriteService** to build the main interface. For the FavoriteNotFoundException go to
+**com.mooracle.service.FavoriteNotFoundException**. For FavoriteSaveException go to 
+**com.mooracle.service.FavoriteSaveException** as well as **com.mooracle.service.FavoriteDeleteException** for 
+FavoriteDeleteExeption class.
