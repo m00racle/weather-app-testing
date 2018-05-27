@@ -160,3 +160,12 @@ thus we must take a detour by making a new branch to provide the necessary class
 ## Entry 23a: Creating WebUtils.java class to support RestApiService.java 
 Go to **com.mooracle.util.WebUtils** after this finish we can back to Entry 23 to build RestApiService.java. 
 [more on URL Encoder](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html)
+
+## Entry 24: Creating Service TimestampDeserializer.java class
+Go to **com.mooracle.service.TimestampDeserializer**. This service class is chosen since there are some interfaces in the
+service package that required by classes inside the service.resttemplate package. This class however, is standalone and
+only dependent on external librarties. Therefore most likely this class will be used by other classes as object. 
+[more on JsonDeserializer class](https://fasterxml.github.io/jackson-databind/javadoc/2.6/com/fasterxml/jackson/databind/JsonDeserializer.html)
+this is the main function to call for the timestamp. 
+[more on the JsonParser class](https://fasterxml.github.io/jackson-core/javadoc/2.5/com/fasterxml/jackson/core/JsonParser.html)
+this is the base class that defines public API for reading JSON content.
