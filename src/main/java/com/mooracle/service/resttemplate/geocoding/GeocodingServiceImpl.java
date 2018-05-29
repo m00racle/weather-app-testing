@@ -52,7 +52,7 @@ public class GeocodingServiceImpl extends RestApiService<GeocodingResponse> impl
     }
 
     /** Note:
-     *  As mentioned above the RestApiService only has three methods: host, key and getDotClass
+     *  As mentioned above the RestApiService only has three methods: host, key and getDtoClass
      *  this will determine the sequence of data from the DTO package.
      * */
     @Override
@@ -66,7 +66,7 @@ public class GeocodingServiceImpl extends RestApiService<GeocodingResponse> impl
     }
 
     @Override
-    public Class<GeocodingResponse> getDotClass() {
+    public Class<GeocodingResponse> getDtoClass() {
         return GeocodingResponse.class;
     }
 }

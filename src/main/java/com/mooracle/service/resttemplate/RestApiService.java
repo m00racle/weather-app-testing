@@ -9,7 +9,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-//we need to manually import static the uriEncode
+//we need to manually import static the uriEncode since it was used but not initialized
 import static com.mooracle.util.WebUtils.uriEncode;
 
 /** Entry 23: Creating REST RestApiService.java abstract class
@@ -20,7 +20,9 @@ import static com.mooracle.util.WebUtils.uriEncode;
  *  5.  The specification of the URI is what this class is intended to build
  *  6.  remember this is an abstract class meaning it needs other class to extends it
  *  7.  In the abstract class declaration there is generic used. This is still unclear what it does exactly find out more
- *  8.  We need to build com.teamtreehouse.util.WebUtils for uriEncode
+ *  8.  We need to build com.teamtreehouse.util.WebUtils for uriEncode using static calls since when it is static
+ *      uriEncode will be initialized when this class is compiled.
+ *  9.
  * */
 
 public abstract class RestApiService<T extends Dto> {
@@ -34,7 +36,7 @@ public abstract class RestApiService<T extends Dto> {
     public abstract String getApiKey();
 
     // another abstract class of the Generic T declared in the abstract class declaration above
-    public abstract Class<T> getDotClass();
+    public abstract Class<T> getDtoClass();// <- patched
 
     // buiding the RequestBuilder, then choose alt+enter create inner class and change it into public for test
     protected RequestBuilder get(String uriTemplate) {
@@ -89,7 +91,7 @@ public abstract class RestApiService<T extends Dto> {
                     .build()
                     .expand(params);
             String url = uriComponents.toUriString();
-            return restTemplate.getForObject(url, getDotClass());
+            return restTemplate.getForObject(url, getDtoClass());
         }
     }
 }

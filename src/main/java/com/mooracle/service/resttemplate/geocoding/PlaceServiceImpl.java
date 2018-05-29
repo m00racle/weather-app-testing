@@ -61,7 +61,7 @@ public class PlaceServiceImpl extends RestApiService<PlacesResponse> implements 
     }
 
     @Override
-    public Class<PlacesResponse> getDotClass() {
+    public Class<PlacesResponse> getDtoClass() {
         return PlacesResponse.class;
     }
 }
