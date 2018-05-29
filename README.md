@@ -201,3 +201,11 @@ There is a mistype inside the RestApiService which **public abstract Class<T> ge
 service. To do this we will use **Refactor** feature to ensure safe renaming the term. However, due to risk of crashing 
 the whole app code this patches will be done in a separate branch from the rest-template-service bracnh. The new branch
 will be called rest-api-patch.
+
+## Notes: Next we will build the Web controllers
+After inspecting the code on both the config and the web controllers we decide to build the web controller first since 
+the code in web controller will be called in the config. I think the pattern here is getting clearer. First we need to
+build the complete Entity, then database mapping, then business logic and services. Thus we will select the platform, in
+this case we use web app. Then after all is done we then configure all to create Java @Beans to be instantiated and 
+prepared to accept and handle requests from user. To do that we will create another branch in Git VCS called 
+**web-controller**
