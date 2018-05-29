@@ -141,3 +141,63 @@ practicality I think the development of DTO service layer is also a development 
 tested to deem functioning it should be integrated in the properties-settings branch. This will also denotes the
 importance of understanding what DTO really stands for. DTOs are simple objects that should not contain any business 
 logic but may contain serialization and deserialization mechanisms for transferring data over the wire.
+
+After this we will focus on the REST template functioning class thus we will create new GitHUb branch called 
+rest-template-service. Here we will develop all necessary classes and interfaces to build full functioning REST API
+
+## Entry 22: Creating REST PlacesService.java interface
+Go to **com.mooracle.service.resttemplate.PlacesService**
+
+## Entry 23: Creating REST RestApiService.java abstract class
+Go to **com.mooracle.service.resttemplate.RestApiService** which will introduce RestTemplate which is part of Spring
+framework web client package [here is the docs](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)
+This class simplifies communication with HTTP servers, and enforces RESTful principles.
+[Find out more on Builder Design Pattern](https://www.google.co.id/search?q=java+builder+design+pattern&oq=java+builde&aqs=chrome.2.69i57j0l5.5224j1j7&sourceid=chrome&ie=UTF-8)
+also it is best to [look back at abstract class](http://www.javacoffeebreak.com/faq/faq0084.html).
+### Note:
+In this entry we found out that this abstract class required to have call a class from **com.mooracle.util** package
+thus we must take a detour by making a new branch to provide the necessary class for the abstract class to perform.
+## Entry 23a: Creating WebUtils.java class to support RestApiService.java 
+Go to **com.mooracle.util.WebUtils** after this finish we can back to Entry 23 to build RestApiService.java. 
+[more on URL Encoder](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html)
+
+## Entry 24: Creating Service TimestampDeserializer.java class
+Go to **com.mooracle.service.TimestampDeserializer**. This service class is chosen since there are some interfaces in the
+service package that required by classes inside the service.resttemplate package. This class however, is standalone and
+only dependent on external librarties. Therefore most likely this class will be used by other classes as object. 
+[more on JsonDeserializer class](https://fasterxml.github.io/jackson-databind/javadoc/2.6/com/fasterxml/jackson/databind/JsonDeserializer.html)
+this is the main function to call for the timestamp. 
+[more on the JsonParser class](https://fasterxml.github.io/jackson-core/javadoc/2.5/com/fasterxml/jackson/core/JsonParser.html)
+this is the base class that defines public API for reading JSON content.
+## Entry 25: Creating WeatherService.java interface
+Go to **com.mooracle.service.WeatherService**
+## Entry 26: Creating GeocodingService.java interface
+Go to **com.mooracle.service.GeocodingService**
+## Entry 27: Creating UserService.java interface
+Go to **com.mooracle.service.UserService**
+## Entry 28: Creating UserServiceImpl.java class implements UserService.java interface
+Go to **com.mooracle.service.UserServiceImpl**, Note that there's a patch since we forgot to add @Service
+## Entry 29: Creating FavoriteService.java interface and its Exceptions
+Go to **com.mooracle.service.FavoriteService** to build the main interface. For the FavoriteNotFoundException go to
+**com.mooracle.service.FavoriteNotFoundException**. For FavoriteSaveException go to 
+**com.mooracle.service.FavoriteSaveException** as well as **com.mooracle.service.FavoriteDeleteException** for 
+FavoriteDeleteExeption class.
+## Entry 30: Creating FavoriteServiceImpl implements FavoriteService Interface
+Go to **com.mooracle.service.FavoriteServiceImpl**
+
+## What's Next
+After this we will make the **com.mooracle.service.resttemplate.geocoding** since it basically full of the service's
+interfaces implementations. It was the @Service part of all of those interfaces. Start from here the entries will be 
+recorded by the Git Log rather than using README which will make it too long to read. This README will only records
+important notes and links.
+
+## Entry 31: Creating PlaceServiceImpl implementing the PlaceService Interface
+More on:
+1. [Annotation Type @Value](https://docs.spring.io/autorepo/docs/spring-framework/3.2.8.RELEASE/javadoc-api/org/springframework/beans/factory/annotation/Value.html)
+
+## Notes Patch: The getDtoClass mistype in RestApiService interface
+There is a mistype inside the RestApiService which **public abstract Class<T> getDotClass();** this should be 
+**public abstract Class<T> getDtoClass();** since it refers to DTO package that serves the data transfer to be used in
+service. To do this we will use **Refactor** feature to ensure safe renaming the term. However, due to risk of crashing 
+the whole app code this patches will be done in a separate branch from the rest-template-service bracnh. The new branch
+will be called rest-api-patch.
