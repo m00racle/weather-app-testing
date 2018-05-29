@@ -184,3 +184,14 @@ Go to **com.mooracle.service.FavoriteService** to build the main interface. For 
 FavoriteDeleteExeption class.
 ## Entry 30: Creating FavoriteServiceImpl implements FavoriteService Interface
 Go to **com.mooracle.service.FavoriteServiceImpl**
+
+## What's Next
+After this we will make the **com.mooracle.service.resttemplate.geocoding** since it basically full of the service's
+interfaces implementations. It was the @Service part of all of those interfaces. Start from here the entries will be 
+recorded by the Git Log rather than using README which will make it too long to read. This README will only records
+important notes and links.
+
+## Entry 31: Creating PlaceServiceImpl implementing the PlaceService Interface
+More on:
+1. [Annotation Type @Value](https://docs.spring.io/autorepo/docs/spring-framework/3.2.8.RELEASE/javadoc-api/org/springframework/beans/factory/annotation/Value.html)
+2. 
