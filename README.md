@@ -209,3 +209,9 @@ build the complete Entity, then database mapping, then business logic and servic
 this case we use web app. Then after all is done we then configure all to create Java @Beans to be instantiated and 
 prepared to accept and handle requests from user. To do that we will create another branch in Git VCS called 
 **web-controller**
+## Entry 34: ReferrerInterceptor class extends HandlerInterceptorAdapter
+more link to:
+1. [HandlerInterceptorAdapter](https://docs.spring.io/autorepo/docs/spring-framework/3.2.8.RELEASE/javadoc-api/org/springframework/web/servlet/handler/HandlerInterceptorAdapter.html#HandlerInterceptorAdapter())
+2. [HTTP servlet Request interface](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
+3. [HTTP ServletRequest Wrapper class](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequestWrapper.html)
+4. [HTTP servlet](https://docs.oracle.com/cd/E13222_01/wls/docs81/servlet/overview.html)
