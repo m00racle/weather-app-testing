@@ -27,10 +27,10 @@ public class GeocodingServiceImpl extends RestApiService<GeocodingResponse> impl
 
     //constructor
     @Autowired
-    public GeocodingServiceImpl(@Value("geocode.api.name") String name,
-                                @Value("geocode.api.key") String key,
-                                @Value("geocode.api.host") String host,
-                                @Value("geocode.api.region") String region) {
+    public GeocodingServiceImpl(@Value("${geocode.api.name}") String name,
+                                @Value("${geocode.api.key}") String key,
+                                @Value("${geocode.api.host}") String host,
+                                @Value("${geocode.api.region}") String region) {
         super();
         this.name = name;
         this.key = key;

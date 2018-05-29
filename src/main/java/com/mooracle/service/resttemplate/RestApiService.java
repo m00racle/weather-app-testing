@@ -22,7 +22,7 @@ import static com.mooracle.util.WebUtils.uriEncode;
  *  7.  In the abstract class declaration there is generic used. This is still unclear what it does exactly find out more
  *  8.  We need to build com.teamtreehouse.util.WebUtils for uriEncode using static calls since when it is static
  *      uriEncode will be initialized when this class is compiled.
- *  9.
+ *  9. The RestApiService generic extends Dto thus limit the Generic as objects in Dto package only
  * */
 
 public abstract class RestApiService<T extends Dto> {
