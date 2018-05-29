@@ -194,4 +194,10 @@ important notes and links.
 ## Entry 31: Creating PlaceServiceImpl implementing the PlaceService Interface
 More on:
 1. [Annotation Type @Value](https://docs.spring.io/autorepo/docs/spring-framework/3.2.8.RELEASE/javadoc-api/org/springframework/beans/factory/annotation/Value.html)
-2. 
+
+## Notes Patch: The getDtoClass mistype in RestApiService interface
+There is a mistype inside the RestApiService which **public abstract Class<T> getDotClass();** this should be 
+**public abstract Class<T> getDtoClass();** since it refers to DTO package that serves the data transfer to be used in
+service. To do this we will use **Refactor** feature to ensure safe renaming the term. However, due to risk of crashing 
+the whole app code this patches will be done in a separate branch from the rest-template-service bracnh. The new branch
+will be called rest-api-patch.
