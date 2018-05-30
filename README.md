@@ -201,3 +201,27 @@ There is a mistype inside the RestApiService which **public abstract Class<T> ge
 service. To do this we will use **Refactor** feature to ensure safe renaming the term. However, due to risk of crashing 
 the whole app code this patches will be done in a separate branch from the rest-template-service bracnh. The new branch
 will be called rest-api-patch.
+
+## Notes: Next we will build the Web controllers
+After inspecting the code on both the config and the web controllers we decide to build the web controller first since 
+the code in web controller will be called in the config. I think the pattern here is getting clearer. First we need to
+build the complete Entity, then database mapping, then business logic and services. Thus we will select the platform, in
+this case we use web app. Then after all is done we then configure all to create Java @Beans to be instantiated and 
+prepared to accept and handle requests from user. To do that we will create another branch in Git VCS called 
+**web-controller**
+## Entry 34: ReferrerInterceptor class extends HandlerInterceptorAdapter
+more link to:
+1. [HandlerInterceptorAdapter](https://docs.spring.io/autorepo/docs/spring-framework/3.2.8.RELEASE/javadoc-api/org/springframework/web/servlet/handler/HandlerInterceptorAdapter.html#HandlerInterceptorAdapter())
+2. [HTTP servlet Request interface](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
+3. [HTTP ServletRequest Wrapper class](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequestWrapper.html)
+4. [HTTP servlet](https://docs.oracle.com/cd/E13222_01/wls/docs81/servlet/overview.html)
+
+## Entry 38: com.mooracle.web.controller.FavoriteController
+more link to:
+1. [Annotation Type PreAuthorize](https://docs.spring.io/spring-security/site/docs/4.0.0.RC1/apidocs//org/springframework/security/access/prepost/PreAuthorize.html)
+2. [Class FlashMap](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/FlashMap.html)
+3. [Class RequestContextUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/support/RequestContextUtils.html)
+4. [Annotation Type ExceptionHandler](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ExceptionHandler.html)
+Note in this step there will be a patch first on the **com.mooracle.web.FlashMessage** that is the mistake on **String**
+type of status field it supposed to be **Status** which enum is coded inside that class. This is a problem since in the
+FavoriteController class we use this status as flag for the flash message thus it invoke an error in the IDE.
