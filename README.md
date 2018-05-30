@@ -215,3 +215,13 @@ more link to:
 2. [HTTP servlet Request interface](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 3. [HTTP ServletRequest Wrapper class](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequestWrapper.html)
 4. [HTTP servlet](https://docs.oracle.com/cd/E13222_01/wls/docs81/servlet/overview.html)
+
+## Entry 38: com.mooracle.web.controller.FavoriteController
+more link to:
+1. [Annotation Type PreAuthorize](https://docs.spring.io/spring-security/site/docs/4.0.0.RC1/apidocs//org/springframework/security/access/prepost/PreAuthorize.html)
+2. [Class FlashMap](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/FlashMap.html)
+3. [Class RequestContextUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/support/RequestContextUtils.html)
+4. [Annotation Type ExceptionHandler](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ExceptionHandler.html)
+Note in this step there will be a patch first on the **com.mooracle.web.FlashMessage** that is the mistake on **String**
+type of status field it supposed to be **Status** which enum is coded inside that class. This is a problem since in the
+FavoriteController class we use this status as flag for the flash message thus it invoke an error in the IDE.
