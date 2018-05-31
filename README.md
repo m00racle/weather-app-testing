@@ -229,4 +229,6 @@ FavoriteController class we use this status as flag for the flash message thus i
 # Config package
 We will start working on the **com.mooracle.config** package. To do this we will make a new branch in the Git and GitHUb
 VCS called config-package. We will start from Application config and moving towards most specific Template config. Each 
-entry will only be recorded in the Git VCS log both in IDEA and GitHub. 
+entry will only be recorded in the Git VCS log both in IDEA and GitHub. This will be sufficient to be put as the 
+reference for future studies. All notes will be given as Docs Comment sections and README only handles the learn more 
+links.
