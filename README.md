@@ -225,3 +225,8 @@ more link to:
 Note in this step there will be a patch first on the **com.mooracle.web.FlashMessage** that is the mistake on **String**
 type of status field it supposed to be **Status** which enum is coded inside that class. This is a problem since in the
 FavoriteController class we use this status as flag for the flash message thus it invoke an error in the IDE.
+
+# Config package
+We will start working on the **com.mooracle.config** package. To do this we will make a new branch in the Git and GitHUb
+VCS called config-package. We will start from Application config and moving towards most specific Template config. Each 
+entry will only be recorded in the Git VCS log both in IDEA and GitHub. 
