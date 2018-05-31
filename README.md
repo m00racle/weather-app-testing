@@ -232,3 +232,9 @@ VCS called config-package. We will start from Application config and moving towa
 entry will only be recorded in the Git VCS log both in IDEA and GitHub. This will be sufficient to be put as the 
 reference for future studies. All notes will be given as Docs Comment sections and README only handles the learn more 
 links.
+
+## Entry 39: Create com.mooracle.config.AppConfig
+learn more:
+1. [Class WebMvcConfigurerAdapter](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurerAdapter.html#addInterceptors-org.springframework.web.servlet.config.annotation.InterceptorRegistry-)
+2. [Jackson Object Mapper](https://github.com/FasterXML/jackson-databind/blob/master/src/main/java/com/fasterxml/jackson/databind/ObjectMapper.java)
+3. [Class SimpleModule](https://fasterxml.github.io/jackson-databind/javadoc/2.4/com/fasterxml/jackson/databind/module/SimpleModule.html)
