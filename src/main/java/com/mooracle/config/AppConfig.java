@@ -91,7 +91,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
         // set the message converter in restTemplate object
         restTemplate.setMessageConverters(Arrays.asList(jsonMessageConverter));
-        return restTemplate();
+        return restTemplate; //<-patched: change to restTemplate field not the method
     }
 
     /** Notes:
