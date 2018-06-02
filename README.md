@@ -225,3 +225,28 @@ more link to:
 Note in this step there will be a patch first on the **com.mooracle.web.FlashMessage** that is the mistake on **String**
 type of status field it supposed to be **Status** which enum is coded inside that class. This is a problem since in the
 FavoriteController class we use this status as flag for the flash message thus it invoke an error in the IDE.
+
+# Config package
+We will start working on the **com.mooracle.config** package. To do this we will make a new branch in the Git and GitHUb
+VCS called config-package. We will start from Application config and moving towards most specific Template config. Each 
+entry will only be recorded in the Git VCS log both in IDEA and GitHub. This will be sufficient to be put as the 
+reference for future studies. All notes will be given as Docs Comment sections and README only handles the learn more 
+links.
+
+## Entry 39: Create com.mooracle.config.AppConfig
+learn more:
+1. [Class WebMvcConfigurerAdapter](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurerAdapter.html#addInterceptors-org.springframework.web.servlet.config.annotation.InterceptorRegistry-)
+2. [Jackson Object Mapper](https://github.com/FasterXML/jackson-databind/blob/master/src/main/java/com/fasterxml/jackson/databind/ObjectMapper.java)
+3. [Class SimpleModule](https://fasterxml.github.io/jackson-databind/javadoc/2.4/com/fasterxml/jackson/databind/module/SimpleModule.html)
+## Entry 41: com.mooracle.config.SecurityConfig
+learn more:
+1. [Class WebSecurityConfigurerAdapter](https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.html)
+2. [Class SecurityContextHolder](https://docs.spring.io/autorepo/docs/spring-security/3.0.x/apidocs/org/springframework/security/core/context/SecurityContextHolder.html)
+3. [Class SecurityEvaluationContextExtension](https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/data/repository/query/SecurityEvaluationContextExtension.html)
+
+Please note in this Security config there was an abbreviation called SPI (Service Provider Interface.): here is some of
+classes from Github to see the content of the code:
+1. [EvaluationContextExtension.java interface on GitHUb](https://github.com/spring-projects/spring-data-commons/blob/master/src/main/java/org/springframework/data/repository/query/spi/EvaluationContextExtension.java)
+2. [EvaluationContextExtensionSupport.java implements EvaluationContextExtension on GitHUb](https://github.com/spring-projects/spring-data-commons/blob/master/src/main/java/org/springframework/data/repository/query/spi/EvaluationContextExtensionSupport.java)
+3. [SecurityExpressionOperations.java interface](https://github.com/spring-projects/spring-security/blob/master/core/src/main/java/org/springframework/security/access/expression/SecurityExpressionOperations.java)
+4. [SecurityExpressionRoot.java implements SecurityExpressionOperation.java](https://github.com/spring-projects/spring-security/blob/master/core/src/main/java/org/springframework/security/access/expression/SecurityExpressionRoot.java)
