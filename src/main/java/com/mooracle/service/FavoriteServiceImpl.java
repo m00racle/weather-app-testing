@@ -24,9 +24,16 @@ public class FavoriteServiceImpl implements FavoriteService{
         return favoriteDao.findAll();
     }
 
+    /** Patched:
+     * This method was patched for structure on throwing FAvoriteNotFoundException()
+     * */
     @Override
-    public Favorite findById(Long id) throws FavoriteNotFoundException {
-        return favoriteDao.findOne(id); // this is a bit different from the course but I think this is okay
+    public Favorite findById(Long id)  {
+        Favorite fave = favoriteDao.findOne(id);
+        if(fave == null){
+            throw new FavoriteNotFoundException();
+        }
+        return fave; // <-changed
     }
 
     @Override
