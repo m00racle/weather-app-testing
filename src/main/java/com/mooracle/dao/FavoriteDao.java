@@ -18,7 +18,7 @@ import java.util.List;
  *  5.  In the case of modifying the Favorite of certain user it has to include @Transactional before saving
  *  6.  Please be careful in selecting the annotations especially @Transactional please refer to the import list
  *  7.  Some of the Querries use native SQL to control the database
- *  patch: fix the @Query for transactional
+ *  patch: fix the @Query for transactional Favorite f
  *  */
 
 @Repository
@@ -27,14 +27,14 @@ public interface FavoriteDao extends CrudRepository<Favorite, Long> {
     @Query("select f from Favorite f where f.user.id=:#{principal.id}")
     List<Favorite> findAll();
 
-    //Finding the Favorite object based on the given placeId
-    @Query("select f from Favorite where f.user.id=:#{principal.id} and f.placeId=:#{#placeId}")
+    //Finding the Favorite object based on the given placeId<- PATCHED
+    @Query("select f from Favorite f where f.user.id=:#{principal.id} and f.placeId=:#{#placeId}")
     Favorite findByPlaceId(@Param("placeId") String placeId);
 
     //saving or updating the Favorite for current user logged in
     @Modifying
     @Transactional
-    @Query(nativeQuery = true, value = "insert into favorite (user_id, formattedAddress, placeId) values(:#{principal.id}, :#{#favorite.formattedAddress}, :#{#favorite.placeId})")
+    @Query(nativeQuery = true, value = "insert into favorite (user_id,formattedAddress,placeId) values (:#{principal.id},:#{#favorite.formattedAddress},:#{#favorite.placeId})")
     int saveForCurrentUser(@Param("favorite") Favorite favorite);
 
     //deleting existing favorite from logged in user
