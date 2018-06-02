@@ -93,10 +93,11 @@ public class DataConfig {
      * - url settings that determine what kind of database is used (see more on the application.properties)
      * - username and password
      *
+     * patches: changes the private declaration to public since this is mandatory for a @Bean method to be public
      *
      * */
     @Bean
-    private DataSource dataSource() {
+    public DataSource dataSource() {// <-patched
         BasicDataSource dataSource = new BasicDataSource();
 
         // set database driver:
@@ -118,7 +119,10 @@ public class DataConfig {
     /** Notes:
      * All necessary methods have been declared and now it's time to wrap all up. The main objective is to form
      * transaction manager to handle the CRUD operation to database. In this case we use JPA as transaction manager
+     *
+     * patch: add @Bean to mmake this JpaTransactionManager as a Java Bean
      * */
+    @Bean //<-patched
     public JpaTransactionManager transactionManager(){
         // instantiate the transaction manager
 
