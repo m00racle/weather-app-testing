@@ -1,7 +1,6 @@
 package com.mooracle.config;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,9 +41,11 @@ public class DataConfig {
      * this entity must be configured to use specific JPA properties., in this case we use Hibernate as JPA for the
      * entities. Therefore we need to instantiate first vendor JPA adaptor from hibernate.
      *
+     * patch: refactor to rename the method name to entityManagerFactory from entityManagerFactoryBean since the name
+     * is mandatory for com.mooracle.service.UserServiceImpl class
      * */
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 
         // define the Hibernate JPA adapter
@@ -86,7 +87,7 @@ public class DataConfig {
     }
 
     /** Notes
-     * this is the dataSource() merthod that is called by entityManagerFactoryBean method. This method is a @Bean object
+     * this is the dataSource() merthod that is called by entityManagerFactory method. This method is a @Bean object
      * consist all properties of the dataSource management. This config method basically settings for database:
      *
      * - database JPA driver
@@ -130,7 +131,7 @@ public class DataConfig {
 
         // wrap the entity manager bean
 
-        transactionManager.setEntityManagerFactory(entityManagerFactoryBean().getObject());
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
 
         // wrap the data source bean
 
