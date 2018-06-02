@@ -60,6 +60,14 @@ public class User implements UserDetails {
         this.role = null;
     }
 
+    // Patch: another constructor for DataLoader
+
+    public User(String username, String password) {//<- patched
+        this();
+        this.username = username;
+        setPassword(password);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return AuthorityUtils.createAuthorityList(role.getName());//this need role.getName()!
