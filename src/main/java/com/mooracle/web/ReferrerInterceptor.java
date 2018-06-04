@@ -4,6 +4,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /** Entry 34: ReferrerInterceptor class extends HandlerInterceptorAdapter
  *  1.  This class intercept referrer and handle it using HTTP servlet request and response
@@ -20,10 +21,16 @@ public class ReferrerInterceptor extends HandlerInterceptorAdapter {
      * insert the @Override method from HandlerInterceptorAdapter
      * this override will change the Request session by setting the attribute using, ATT_REFERRER_URI object as the
      * attribute name and get the Request uri from the user as the value
+     *
+     * Patch -> make Http session request to be less eager to create sesssion
      * */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        request.getSession().setAttribute(ATT_REFERRER_URI, request.getRequestURI());
+        // Patched: add request.getSession create to be false at the moment
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            request.getSession().setAttribute(ATT_REFERRER_URI, request.getRequestURI());
+        }
     }
 
     /** Note:
