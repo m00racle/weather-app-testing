@@ -10,6 +10,7 @@ import javax.persistence.Id;
  *  2.  We should build this first before building the User @Entity since it will be used by User as OneToOne
  *  3.  This role @Entity does not have its own column but it is part of other schema in the database.
  *  4.  The Role data will only came up in the role_id column in the User schema
+ *  Patch -> add Role default constructor
  * */
 
 @Entity
@@ -21,6 +22,12 @@ public class Role {
 
     //field string role name (does not need a column)
     private String name;
+
+    // Patch: default constructor for Role
+    public Role(){
+        this.id = null;
+        this.name = null;
+    }
 
     //Constructor (not default) but it is id will be null as initial value:
     public Role (String name){

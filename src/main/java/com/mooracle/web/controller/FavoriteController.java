@@ -34,6 +34,8 @@ import static com.mooracle.web.ReferrerInterceptor.redirect;
  *  5.  We also learn about FlashMap and the link to learn more from the docs is in the README
  *  6.  Also comes with FlashMap there also RequestContextUtils link to learn more in README
  *  7.  The new concept here also on @ExceptionHandler which link to docs is in README
+ *  8.  The @PreAuthorize is the annotation that will determine in this test only to make sure the User login is hasRole
+ *      calle ROLE_USER which is set in DataLoader class.
  * */
 
 @Controller
