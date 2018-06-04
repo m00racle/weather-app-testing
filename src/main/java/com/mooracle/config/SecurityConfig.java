@@ -4,6 +4,7 @@ import com.mooracle.domain.User;
 import com.mooracle.service.UserService;
 import com.mooracle.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
@@ -89,8 +90,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * redirect attribute. Then after that failure will need FAILURE status then redirect back to "/login" URL
      *
      * The attribute name flash is already set in the login template
+     *
+     * patch: make the method public for tests
      * */
-    private AuthenticationFailureHandler failureLoginHandler() {
+    public AuthenticationFailureHandler failureLoginHandler() {// <- patched
         return (request, response, exception) -> {
             request.getSession().setAttribute("flash",
                                 new FlashMessage("Incorrect username and/or password. Try again",
@@ -104,8 +107,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      *
      * This will utilize lambda form of class to handle the next request after the user succesfully provides
      * authentication to login. This case we will redirect it to "/" url using response redirect
+     *
+     * patch: make the method public for test
      * */
-    private AuthenticationSuccessHandler loginSuccessHandler() {
+    public AuthenticationSuccessHandler loginSuccessHandler() { // <- patched
         return (request, response, authentication) -> response.sendRedirect("/");
     }
 
@@ -113,7 +118,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * To wrap all up we build a @Bean on EvaluationContextExtension interface which the full definition and explanation
      * is not yet clear. However, this is as concept not yet clear. Most links I can find are listed in the README.md
      * please put time to inspect the GitHUb git on each file.
+     *
+     * patch issue #14: add (forgotten) @Bean to make principal public
+     * more about this in README
      * */
+
+    @Bean //<-patched
     public EvaluationContextExtension securityExtension(){
         return new EvaluationContextExtensionSupport() {
             @Override

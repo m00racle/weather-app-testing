@@ -250,3 +250,6 @@ classes from Github to see the content of the code:
 2. [EvaluationContextExtensionSupport.java implements EvaluationContextExtension on GitHUb](https://github.com/spring-projects/spring-data-commons/blob/master/src/main/java/org/springframework/data/repository/query/spi/EvaluationContextExtensionSupport.java)
 3. [SecurityExpressionOperations.java interface](https://github.com/spring-projects/spring-security/blob/master/core/src/main/java/org/springframework/security/access/expression/SecurityExpressionOperations.java)
 4. [SecurityExpressionRoot.java implements SecurityExpressionOperation.java](https://github.com/spring-projects/spring-security/blob/master/core/src/main/java/org/springframework/security/access/expression/SecurityExpressionRoot.java)
+
+## Patched Security Config
+1. [SpEL EvaluationContext extension model](https://spring.io/blog/2014/07/15/spel-support-in-spring-data-jpa-query-definitions#spel-evaluationcontext-extension-model)
