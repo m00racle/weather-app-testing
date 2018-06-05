@@ -253,3 +253,8 @@ classes from Github to see the content of the code:
 
 ## Patched Security Config
 1. [SpEL EvaluationContext extension model](https://spring.io/blog/2014/07/15/spel-support-in-spring-data-jpa-query-definitions#spel-evaluationcontext-extension-model)
+
+All patches have been implemented and the brances alredy being merge back to master. The initial test run is success.
+This experience not only giving the deeper understanding on how is the app runs but also use new approach on limiting
+the request to create session which is not used in the course. Also many notes on patches need to be focused more as 
+learning tools to become better developer. Now we are ready to do Unit Testing.
