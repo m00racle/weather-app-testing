@@ -26,6 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *      package can be written as short as get) and also view() (part of the MockMvcResultMatchers package)
  *  9.  To run any test just open the page the test you want to run, focus on the class test and press ctrl+shift+F10
  *      or just right click the class name and choose run test
+ *  Additional Notes available in README
  * */
 public class WeatherControllerTest {
     // mock MVC Object
@@ -35,6 +36,9 @@ public class WeatherControllerTest {
     /** Notes:
      * Here in this @Before method we initialize the controller that will be tested and prepare mock MVC object to
      * by pass the ApplicationContext operation. To do this I need a MOckMvcBuilders and choose standaloneSetup.
+     *
+     * By using this mocked MVC object we can add some simulation on how will a HTTP request is performed full with its
+     * attributes and then we can test the response matchers.
      * */
 
     @Before

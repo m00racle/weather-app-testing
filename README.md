@@ -258,3 +258,16 @@ All patches have been implemented and the brances alredy being merge back to mas
 This experience not only giving the deeper understanding on how is the app runs but also use new approach on limiting
 the request to create session which is not used in the course. Also many notes on patches need to be focused more as 
 learning tools to become better developer. Now we are ready to do Unit Testing.
+
+## Entry 43: com.mooracle.web.controller.WeatherControllerTest
+[Course Video link](https://teamtreehouse.com/library/controller-testing)
+
+Mock MVC Result Matchers. What you "expect" after performing a request on a MockMvc object is called a ResultMatcher. 
+Typically your options will come from the MockMvcResultMatchers class. Some things you can examine are the following:
+
+1. content(): check the response body for actual content in the HTTP response
+2. flash(): check for certain flash attributes
+3. model(): check for model attributes
+4. jsonPath(...): check for content in an HTTP response body that is in the JSON format (e.g. for a REST API)
+
+For a full list of matchers, see the [Spring docs org.springframework.test.web.servlet.result.MockMvcResultMatchers.](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html)
