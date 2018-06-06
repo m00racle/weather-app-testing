@@ -271,3 +271,12 @@ Typically your options will come from the MockMvcResultMatchers class. Some thin
 4. jsonPath(...): check for content in an HTTP response body that is in the JSON format (e.g. for a REST API)
 
 For a full list of matchers, see the [Spring docs org.springframework.test.web.servlet.result.MockMvcResultMatchers.](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html)
+
+## Entry 44: com.mooracle.web.controller.FavoriteControllerTest
+
+[Link to the video and Teacher's Notes](https://teamtreehouse.com/library/setting-up-mockito)
+
+In order to preserve the "unit" in unit testing, often we need to mock, or fake, the functionality of certain objects. 
+There are several popular libraries out there to choose from. We'll be using Mockito, so this video shows you how to get 
+started with Mockito. Read more about how to set Mockito other than showed in the course in the [Teacher's Notes](https://teamtreehouse.com/library/setting-up-mockito)
+
