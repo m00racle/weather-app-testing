@@ -3,6 +3,7 @@ package com.mooracle.web.controller;
 import com.mooracle.domain.Favorite;
 import com.mooracle.service.FavoriteNotFoundException;
 import com.mooracle.service.FavoriteService;
+import com.mooracle.web.FlashMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -150,6 +151,7 @@ public class FavoriteControllerTests {
 
             f.setId(1L);//<- set the id as 1 the L is because the number format must be Long
 
+
             return null;
         }).when(service).save(any(Favorite.class));//<- do this when service.save is called for any Favorite class object
 
@@ -160,7 +162,7 @@ public class FavoriteControllerTests {
                     .param("formattedAddress", "chicago, il")//<- you can put anything here
                     .param("placeId","chicago1")
         ).andExpect(redirectedUrl("/favorites/1")//<- remember we set the id to 1L
-        );
+        ).andExpect(flash().attributeExists("flash"));
         verify(service).save(any(Favorite.class));//<-verify if service save method is indeed called
 
     }
@@ -206,5 +208,35 @@ public class FavoriteControllerTests {
         // verify that service.findById was called
         verify(service).findById(1L);
 
+    }
+
+    /** Notes:
+     * This @Test the remove method called by POST "/favorites/{id}/delete" will invoke calls to FavoriteService.delete
+     * method. Then it will create flash attribute called "flash" and redirect to "/favorites"
+     *
+     * First we need to mock the service.delete(Long id) call. Here we will set it to call it for any Long type number
+     * as id. This is to simplify the process. In the delete method there is void return thus nothing to set here since
+     * basically designated favorite object is just missing. Just return null!
+     *
+     * Then all the rest is internal process to test including the flash attribute, and redirect. But we need to verify
+     * that indeed a call to service.delete(Any(Long.TYPE number)) really did happen during the process.
+     * */
+
+    @Test
+    public void remove_ShouldRedirectToFavoriteIndex() throws Exception{
+
+        // Arrange the mock behavior (Basically no settings needed in delete right?) but still it void thus doAnswer
+
+        doAnswer(invocation -> {
+            return null;
+        }).when(service).delete(any(Long.TYPE));
+
+        // Act, Asserts
+        mockMvc.perform(post("/favorites/2/delete"))
+                .andExpect(redirectedUrl("/favorites"))
+                .andExpect(flash().attributeExists("flash"));
+
+        // verify
+        verify(service).delete(any(Long.TYPE));
     }
 }
