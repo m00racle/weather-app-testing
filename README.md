@@ -285,3 +285,8 @@ started with Mockito. Read more about how to set Mockito other than showed in th
 In the last video you saw some setup tasks for working with Mockito. So that our controller tests can focus completely 
 on controllers, in this video we mock the behavior of our services and verify that service methods were called as 
 expected. For more [info on Mockito](http://site.mockito.org/mockito/docs/current/org/mockito/stubbing/Answer.html)
+
+## Entry 45: Testing Services com.mooracle.service.FavoriteServiceTest
+Moving one step closer to the database, we start testing our services. In this tests (some of those) we will need to 
+mock DAOs. To do this we need to understand more about:
+1. [Getting Started with Hamcrest](https://code.google.com/archive/p/hamcrest/wikis/Tutorial.wiki)
