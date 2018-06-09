@@ -273,10 +273,15 @@ Typically your options will come from the MockMvcResultMatchers class. Some thin
 For a full list of matchers, see the [Spring docs org.springframework.test.web.servlet.result.MockMvcResultMatchers.](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html)
 
 ## Entry 44: com.mooracle.web.controller.FavoriteControllerTest
-
 [Link to the video and Teacher's Notes](https://teamtreehouse.com/library/setting-up-mockito)
 
 In order to preserve the "unit" in unit testing, often we need to mock, or fake, the functionality of certain objects. 
 There are several popular libraries out there to choose from. We'll be using Mockito, so this video shows you how to get 
 started with Mockito. Read more about how to set Mockito other than showed in the course in the [Teacher's Notes](https://teamtreehouse.com/library/setting-up-mockito)
 
+### Entry 44: Mocking with Mockito
+[Link to the course's video](https://teamtreehouse.com/library/mocking-with-mockito)
+
+In the last video you saw some setup tasks for working with Mockito. So that our controller tests can focus completely 
+on controllers, in this video we mock the behavior of our services and verify that service methods were called as 
+expected. For more [info on Mockito](http://site.mockito.org/mockito/docs/current/org/mockito/stubbing/Answer.html)
