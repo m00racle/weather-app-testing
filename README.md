@@ -285,3 +285,27 @@ started with Mockito. Read more about how to set Mockito other than showed in th
 In the last video you saw some setup tasks for working with Mockito. So that our controller tests can focus completely 
 on controllers, in this video we mock the behavior of our services and verify that service methods were called as 
 expected. For more [info on Mockito](http://site.mockito.org/mockito/docs/current/org/mockito/stubbing/Answer.html)
+
+## Entry 45: Testing Services com.mooracle.service.FavoriteServiceTest
+Moving one step closer to the database, we start testing our services. In this tests (some of those) we will need to 
+mock DAOs. To do this we need to understand more about:
+1. [Getting Started with Hamcrest](https://code.google.com/archive/p/hamcrest/wikis/Tutorial.wiki)
+
+## Entry 46: Setting Up a Test Context com.mooracle.service.WeatherServiceTest
+Wherever possible, we want to leave Spring out of our tests and focus completely on the "unit" under test. However, 
+sometimes it's necessary to access Spring components, such as services, repositories, or other beans. For this reason, 
+we can setup a minimal test ApplicationContext to save us the overhead of starting an entire Spring ApplicationContext.
+ 
+ [This video](https://teamtreehouse.com/library/setting-up-a-test-context) demonstrates one approach for setting up a 
+ test context.
+ 
+ This time we want to test the **com.mooracle.service.WeatherService**, but when we look at the 
+ **com/mooracle/service/resttemplate/weather/WeatherServiceImpl.java** it was suggested that it will not be that simple
+ so far we try to omit other process in order to isolate the Unit that we are testing. However, in the case of weather 
+ service implementation there are a lot external properties that was taken from **api.properties**. Thus we need to add
+ @Test specific configuration class. Now we go to **com.mooracle.service.WeatherServiceTest** to do that.
+ 
+ ## Entry 47: Testing With Our Test Context com.mooracle.service.WeatherServiceTest
+ In [this video](https://teamtreehouse.com/library/testing-with-our-test-context), we leverage the test context 
+ we created in the [previous video](https://teamtreehouse.com/library/setting-up-a-test-context) and begin writing the 
+ tests for a service that accesses an external API.

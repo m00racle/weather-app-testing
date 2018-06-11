@@ -61,8 +61,28 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      * */
     @Bean
     public RestTemplate restTemplate(){
+        RestTemplate rt = new RestTemplate();
+        rt.setRequestFactory(clientHttpRequestFactory());
+        return rt;
+    }
+
+    /** Entry 46: Modify the restTemplate to make it static
+     * This modification is to make it available to build a @Bean both for test and this class restTemplate method
+     *
+     * We move all code from the restTemplate method to this method but we modify the clientHttpRequestFactory method
+     * call since our test will not need this. As for the restTemplate in this class we can just add it later
+     * NOTE that clientHttpRequestFactory is an instance method so it cannot be called from a static method,
+     *
+     * Thus it also changes the method on how to call clientHttpRequestFactory since it will set rather instantiate with
+     * the RestTemplate object. Since the restTemplate in this class is also a instance method it can absolutely do this
+     *
+     *  Great now we have a public static method of restTemplate that were run when the app compiled thus can be directly
+     *  called from the WeatherServiceTest class.
+     * */
+
+    public static RestTemplate defaultRestTemplate(){
         // initialize Rest Template
-        RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory());
+        RestTemplate restTemplate = new RestTemplate();
 
         // set the Object Mapper
 
