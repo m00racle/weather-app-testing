@@ -309,3 +309,24 @@ we can setup a minimal test ApplicationContext to save us the overhead of starti
  In [this video](https://teamtreehouse.com/library/testing-with-our-test-context), we leverage the test context 
  we created in the [previous video](https://teamtreehouse.com/library/setting-up-a-test-context) and begin writing the 
  tests for a service that accesses an external API.
+ 
+ ## Entry 48: Setting Up DBUnit for DAO Tests
+ When testing the data (DAO) layer of our application, it's helpful to have some assistance in starting our tests with 
+ some test data, and even verifying our resulting database after a test executes. Our assistance comes from a library 
+ called DBUnit, and in [this video](https://teamtreehouse.com/library/setting-up-dbunit-for-dao-tests) 
+ I show you how to configure your tests to use it.
+ 
+ More about [annotations](https://docs.spring.io/spring-data/jpa/docs/1.4.3.RELEASE/reference/html/jpa.repositories.html)
+ in the com.mooracle.dao.FavoriteDao interface.
+ 1. Using @Query : 2.3.4
+ 2. @Modifying: 2.3.7
+ 3. @Transactional: 2.5
+ 
+ More about [Application Context](https://spring.io/understanding/application-context)
+ 
+ more on [Annotation Type SpringBootTest.](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/SpringBootTest.html)
+ to substitute deprecated @SpringApplcationConfiguration suggested by [this forum post](https://stackoverflow.com/questions/39417530/what-is-the-proper-annotation-since-springapplicationconfiguration-webintegra)
+ 
+ MORE ON [Interface TestExecutionListener](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/TestExecutionListener.html)
+ 
+ 
