@@ -304,3 +304,8 @@ we can setup a minimal test ApplicationContext to save us the overhead of starti
  so far we try to omit other process in order to isolate the Unit that we are testing. However, in the case of weather 
  service implementation there are a lot external properties that was taken from **api.properties**. Thus we need to add
  @Test specific configuration class. Now we go to **com.mooracle.service.WeatherServiceTest** to do that.
+ 
+ ## Entry 47: Testing With Our Test Context com.mooracle.service.WeatherServiceTest
+ In [this video](https://teamtreehouse.com/library/testing-with-our-test-context), we leverage the test context 
+ we created in the [previous video](https://teamtreehouse.com/library/setting-up-a-test-context) and begin writing the 
+ tests for a service that accesses an external API.
