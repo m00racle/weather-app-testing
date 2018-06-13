@@ -19,6 +19,27 @@ import java.util.List;
  *  6.  Please be careful in selecting the annotations especially @Transactional please refer to the import list
  *  7.  Some of the Querries use native SQL to control the database
  *  patch: fix the @Query for transactional Favorite f
+ *
+ * Entry 48:
+ *  Spring Data JPA Repository allows us to create an interface that extends other such as CrudRepository. When we fire
+ *  up our app, Spring Data will generate the implementations of these repositories or known as DAO.
+ *
+ *  In this project, I have no explicit defined implementation class for this interface. This implementation will be
+ *  provided by Spring Data when the app is booted.
+ *
+ *  When we checked the CrudRepository interface it has all the method we need here findAll, findOne, save, delete. But
+ *  I can't find the annotation definition from it. To learn about those annotation there is a link in the README.
+ *
+ *  In testing we must remember that we don't have to test out our dependencies in this case CrudRepository interface.
+ *  It was already done by their developers. However, we need to test all the methods we modified. In this case:
+ *      1.  findAll()
+ *      2.  findByPlaceId(String PlaceId)
+ *      3.  saveForCurrentUser
+ *      4.  deleteForCurrentUser
+ *  All of which uses Spring JPA annotations such as @Query, @Modifying, and @Transactional (more about these annotations
+ *  there is a link in the README)
+ *
+ *  Now let's create test for this interface!
  *  */
 
 @Repository

@@ -1,0 +1,31 @@
+<!--
+Entry 48:
+This is where we build our pre loaded data that will be injected to our local memory database using Hibernate
+
+This data files are called Flat XML data files where we can create one file with entries as many tables as we like. We
+put all the data into a root node of dataset, just like that.
+
+For each ROW of data we would like to insert into our test database we create an XML element inside the dataset element,
+whose tag name is the entity that we are inserting in this case role. Then inside the tag there will be ATTRIBUTES that
+will represent the column name and the value that we want to insert into that specific column.
+
+NOTE: in the user tag the role_id attribute is the cross column with the role tag (table) all user has role as user
+
+NOTE: we assign different amount of Favorites (3 for user 1 and 2 for user 2) so we can test if the returned number of
+favorites indeed refers to the correct user.
+-->
+
+<dataset>
+    <role id="1" name="ROLE_USER"/>
+
+
+    <user id="1" username="user1" password="password" enabled="true" role_id="1"/>
+    <user id="2" username="user2" password="password" enabled="true" role_id="1"/>
+
+    <favorite id="1" user_id="1"/>
+    <favorite id="2" user_id="1"/>
+    <favorite id="3" user_id="1"/>
+    <favorite id="4" user_id="2"/>
+    <favorite id="5" user_id="2"/>
+
+</dataset>
