@@ -329,4 +329,10 @@ we can setup a minimal test ApplicationContext to save us the overhead of starti
  
  MORE ON [Interface TestExecutionListener](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/TestExecutionListener.html)
  
+ ## Entry 49: Writing Our DAO Tests com.mooracle.dao.FavoriteDaoTest
+ With our DBUnit setup complete from the previous video, it's time to write tests that verify our DAOs are working as 
+ intended!
+ 
+ Learn More:
+ 1. [@ContextConfiguration](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/ContextConfiguration.html)
  

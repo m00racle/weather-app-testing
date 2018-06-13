@@ -3,12 +3,25 @@ package com.mooracle.dao;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.mooracle.Application;
+import com.mooracle.domain.Favorite;
+import com.mooracle.domain.User;
+import org.hamcrest.MatcherAssert;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+
+// import static part to simplify the code:
+
+import static org.hamcrest.Matchers.*;
+import static com.mooracle.domain.Favorite.FavoriteBuilder;
 
 import static org.junit.Assert.*;
 /** Entry 48: Setting Up DBUnit for DAO Tests
@@ -43,6 +56,9 @@ import static org.junit.Assert.*;
  *  we use @SpringBootTest now (more on this there is a link in README) which by default should find all @Configuration
  *  to be implemented into this test
  *
+ *  WARNING: since we only use local memory database the use of @SpringBoot test is not working. We change it into the
+ *  use of @ContextConfiguration (link on the README) and pass classes of Application.class
+ *
  *  Next thing we'll have to tackle is how to start with a pre-existing set of data. There are vaious tools out there to
  *  help us with this but we will use DB unit. We'll use it to inject a set of starter data into our database so that
  *  we have some users, roles, and favorites ready to go when we want to test.
@@ -71,7 +87,8 @@ import static org.junit.Assert.*;
  * */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
+@ContextConfiguration(classes = Application.class) // this fix deprecated @SpringApplicationConiguration
+//@SpringBootTest(classes = Application.class) <- Not working!! I do not know why.. Context failed to load use above!
 @DatabaseSetup("classpath:favorites.xml")
 @TestExecutionListeners({
         DependencyInjectionTestExecutionListener.class,
@@ -80,4 +97,77 @@ import static org.junit.Assert.*;
 public class FavoriteDaoTest {
     @Autowired
     private FavoriteDao dao;
+
+    /** Notes:
+     * Before we start @Test we need to set some things first.
+     *
+     * We need to create a new user in this case let's use User with user id = 1, please check with the favorites.xml
+     * the data about User with user id =1!.
+     *
+     * Then we need to give authentication to the user since our DAO methods that we're testing contains custom @Query
+     * that injects authentication data. That means our DAO under test will need that authentication data available for
+     * injection.
+     *
+     * To make sure Spring understand this user (id = 1) is the user authenticated is to set the authentication object
+     * of the security content. Thus we use org.springframework.security.core.context.SecurityContextHolder to call the
+     * getContext().setAuthentication method to set it up.
+     *
+     * This way we then create a new token just make any user and null credential just that we can pass the authentication
+     * process then proceed to the main tests.
+     * */
+
+    @Before
+    public void setup(){
+
+        // Arrange: create new User
+
+        User user = new User();
+        user.setId(1L);
+
+        SecurityContextHolder.getContext()
+                .setAuthentication(new UsernamePasswordAuthenticationToken(user, null));
+    }
+
+    /** Notes:
+     * In the favorites.xml we can see that the user with id = 1, has 3 Favorites from favorite id 1 to favorite id 3.
+     * Thus in this test if we call the @Autowired dao.findAll() method we should get a List that has Size of 3!
+     *
+     * NOTE: we need to import static some packages to simplify the coding here please refer to import static section
+     * above!!
+     * */
+
+    @Test
+    public void findAll_ShouldReturnTwo() throws Exception{
+        assertThat(dao.findAll(),hasSize(3));
+    }
+
+    /** Notes:
+     * This test step is rather long since we need a Favorite object to save onto. Thus we create one with the builder
+     * that only place id parameter put in. This place id will be used to assert that the Favorite object indeed
+     * successfully saved.
+     *
+     * Then we act by saving the newly created Favorite with builder that we were allowed to just provided one parameter
+     * the placeId.
+     *
+     * Assert that if we call the favorite from the dao find by id (using the place id) we will get something other than
+     * just null response.
+     * */
+
+    @Test
+    public void save_ShouldPersistEntity() throws Exception{
+
+        // Arrange: creates new Favorite:
+
+        Favorite favorite = new FavoriteBuilder().withPlaceId("place id").build();
+
+        // Act: save the newly created favorite
+
+        dao.saveForCurrentUser(favorite);
+
+        // Assert that if we call that favorite with specified PlaceId it will not return null
+
+        assertThat(dao.findByPlaceId("place id"), notNullValue(Favorite.class));
+    }
+
+
 }
