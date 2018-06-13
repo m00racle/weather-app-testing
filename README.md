@@ -336,3 +336,12 @@ we can setup a minimal test ApplicationContext to save us the overhead of starti
  Learn More:
  1. [@ContextConfiguration](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/ContextConfiguration.html)
  
+ ## Conclusions Integration Tests with HTMLUnit
+ 
+ If you want rich testing of your application, including testing of navigation and form submission, check out this 
+ series of blog posts:
+ 
+ [Introducing Spring Test MVC HtmlUnit](https://spring.io/blog/2014/03/19/introducing-spring-test-mvc-htmlunit)
+ [Spring MVC Test with HtmlUnit](https://spring.io/blog/2014/03/25/spring-mvc-test-with-htmlunit)
+ [Spring MVC Test with WebDriver](https://spring.io/blog/2014/03/26/spring-mvc-test-with-webdriver)
+ [Spring MVC Test with Geb](https://spring.io/blog/2014/04/15/spring-mvc-test-with-geb)
